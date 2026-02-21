@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Món Ngon Mỗi Ngày</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#f5f5f5;}
+
+header{
+background:#e60012;color:white;padding:15px;
+text-align:center;font-size:22px;font-weight:bold;
+}
+
+.home-btn{
+margin-top:10px;padding:8px 15px;border:none;
+background:white;color:#e60012;border-radius:20px;
+cursor:pointer;font-weight:bold;
+}
+
+.banner{
+background:url("https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=1400&q=60") center/cover;
+height:320px;display:flex;align-items:flex-end;justify-content:center;padding:20px;
+}
+
+.search-box{
+background:white;width:90%;max-width:650px;padding:20px;
+border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.2);text-align:center;
+}
+
+.search-bar{display:flex;gap:10px;}
+
+.search-bar input{
+flex:1;padding:12px;border-radius:8px;border:1px solid #ccc;font-size:16px;
+}
+
+.search-bar button{
+background:#e60012;color:white;border:none;padding:12px 20px;border-radius:8px;cursor:pointer;
+}
+
+.popular{padding:30px 20px;text-align:center;}
+
+.tags span{
+display:inline-block;background:#eee;padding:8px 15px;margin:5px;
+border-radius:20px;cursor:pointer;
+}
+
+.food-section{
+padding:20px;display:flex;flex-wrap:wrap;gap:20px;justify-content:center;
+}
+
+.food-card{
+background:white;width:280px;border-radius:10px;overflow:hidden;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);cursor:pointer;
+transition:0.3s;
+}
+
+.food-card:hover{
+transform:translateY(-5px);
+}
+
+.food-card img{
+width:100%;height:180px;object-fit:cover;
+}
+
+.food-card h3{padding:10px;color:#e60012;}
+.food-card p{padding:0 10px 15px 10px;font-size:14px;}
+</style>
+</head>
+
+<body>
+
+<header>Món Ngon Mỗi Ngày</header>
+
+<div class="banner">
+<div class="search-box">
+<h2>Hơn 2.000 Công Thức Món Ngon</h2>
+<div class="search-bar">
+<input type="text" id="searchInput" placeholder="Nhập món ngon đang tìm kiếm...">
+<button onclick="searchFood()">Tìm</button>
+</div>
+</div>
+</div>
+
+<div class="popular">
+<h2>TÌM KIẾM PHỔ BIẾN</h2>
+<div class="tags">
+<span onclick="setTag('Phở')">Phở</span>
+<span onclick="setTag('Bún')">Bún</span>
+<span onclick="setTag('Cơm')">Cơm</span>
+<span onclick="setTag('Bánh')">Bánh</span>
+<span onclick="setTag('Chè')">Chè</span>
+</div>
+</div>
+
+<div class="food-section">
+
+<div class="food-card" onclick="openDetail('pho')">
+<img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=800&q=60">
+<h3>Phở Bò</h3>
+<p>Món truyền thống Việt Nam với nước dùng đậm đà.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('bunbo')">
+<img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=60">
+<h3>Bún Bò Huế</h3>
+<p>Đặc sản miền Trung với hương vị cay nồng.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('banhmi')">
+<img src="https://cdn.tgdd.vn/2020/10/CookProduct/0.-1200x674.jpg">
+<h3>Bánh Mì</h3>
+<p>Món ăn đường phố nổi tiếng khắp thế giới.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('comtam')">
+<img src="https://images.baodantoc.vn/uploads/2023/Th%C3%A1ng%205/Ng%C3%A0y_17/Thanh/quan-com-tam-o-ha-noi-.jpg">
+<h3>Cơm Tấm</h3>
+<p>Đặc sản Sài Gòn với sườn nướng thơm lừng.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('goicuon')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Summer_roll.jpg/250px-Summer_roll.jpg">
+<h3>Gỏi Cuốn</h3>
+<p>Món ăn thanh mát, ít dầu mỡ.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('banhxeo')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/B%C3%A1nh_x%C3%A8o_with_n%C6%B0%E1%BB%9Bc_m%E1%BA%AFm.jpg/250px-B%C3%A1nh_x%C3%A8o_with_n%C6%B0%E1%BB%9Bc_m%E1%BA%AFm.jpg">
+<h3>Bánh Xèo</h3>
+<p>Bánh giòn rụm với nhân tôm thịt hấp dẫn.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('hutieu')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/H%E1%BB%A7_t%C3%ADu_Nam_Vang_%28h%E1%BB%A7_t%C3%ADu_t%C3%B4m%29%2C_qu%C3%A1n_C%E1%BA%A7u_Tr%E1%BA%AFng%2C_K%C3%AAnh_n%C6%B0%E1%BB%9Bc_%C4%91en_%281%29.jpg/250px-H%E1%BB%A7_t%C3%ADu_Nam_Vang_%28h%E1%BB%A7_t%C3%ADu_t%C3%B4m%29%2C_qu%C3%A1n_C%E1%BA%A7u_Tr%E1%BA%AFng%2C_K%C3%AAnh_n%C6%B0%E1%BB%9Bc_%C4%91en_%281%29.jpg">
+<h3>Hủ Tiếu</h3>
+<p>Món nước phổ biến ở miền Nam.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('buncha')">
+<img src="https://cdn.tgdd.vn/Files/2019/10/17/1209758/cach-lam-banh-cha-ha-noi-mon-dac-san-dan-da-cuc-hop-an-trung-thu-760x367.jpg">
+<h3>Bún Chả</h3>
+<p>Món ăn nổi tiếng Hà Nội.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('che')">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7Vd0L-4uYds118OuLzug5cr3NG4rwZDhYcA&s">
+<h3>Chè Ba Màu</h3>
+<p>Món tráng miệng ngọt mát.</p>
+</div>
+
+</div>
+
+<div id="detailPage" style="display:none; padding:30px; max-width:900px; margin:30px auto; background:white; border-radius:10px;">
+<button onclick="goHome()" class="home-btn">⬅ Quay về Trang Chủ</button>
+<h2 id="detailTitle" style="margin-top:20px; color:#e60012;"></h2>
+<img id="detailImg" style="width:100%; margin:20px 0; border-radius:10px;">
+<p id="detailDesc"></p>
+<h3 style="margin-top:20px;">Nguyên liệu</h3>
+<ul id="detailIngredients"></ul>
+<h3 style="margin-top:20px;">Cách làm</h3>
+<ol id="detailSteps"></ol>
+</div>
+
+<script>
+function searchFood(){
+let input=document.getElementById("searchInput").value.toLowerCase();
+let cards=document.querySelectorAll(".food-card");
+cards.forEach(card=>{
+let title=card.querySelector("h3").innerText.toLowerCase();
+card.style.display=title.includes(input)?"block":"none";
+});
+}
+
+function setTag(text){
+document.getElementById("searchInput").value=text;
+searchFood();
+}
+
+const foodData={
+pho:{title:"Phở Bò",img:"https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=1200&q=60",
+desc:"Phở bò là món ăn truyền thống nổi tiếng của Việt Nam.",
+ingredients:["Xương bò","Thịt bò","Bánh phở","Quế hồi","Hành gừng"],
+steps:["Ninh xương 4-6 tiếng","Thêm gia vị","Trụng phở","Chan nước dùng"]},
+
+bunbo:{title:"Bún Bò Huế",img:"https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=1200&q=60",
+desc:"Đặc sản Huế cay nồng.",
+ingredients:["Giò heo","Bún","Sả","Mắm ruốc"],
+steps:["Ninh xương","Thêm sả","Nêm gia vị","Chan nước"]},
+
+banhmi:{title:"Bánh Mì",img:"https://cdn.tgdd.vn/2020/10/CookProduct/0.-1200x674.jpg",
+desc:"Món ăn đường phố nổi tiếng.",
+ingredients:["Bánh mì","Thịt","Pate","Rau"],
+steps:["Rạch bánh","Cho nhân","Thêm rau","Thưởng thức"]},
+
+comtam:{title:"Cơm Tấm",img:"https://images.baodantoc.vn/uploads/2023/Th%C3%A1ng%205/Ng%C3%A0y_17/Thanh/quan-com-tam-o-ha-noi-.jpg",
+desc:"Đặc sản Sài Gòn.",
+ingredients:["Gạo tấm","Sườn","Trứng"],
+steps:["Ướp sườn","Nướng","Nấu cơm","Trình bày"]},
+
+goicuon:{title:"Gỏi Cuốn",img:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Summer_roll.jpg/250px-Summer_roll.jpg",
+desc:"Món ăn thanh mát.",
+ingredients:["Bánh tráng","Tôm","Rau","Bún"],
+steps:["Luộc tôm","Cuốn nguyên liệu","Pha nước chấm"]},
+
+banhxeo:{title:"Bánh Xèo",img:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/B%C3%A1nh_x%C3%A8o_with_n%C6%B0%E1%BB%9Bc_m%E1%BA%AFm.jpg/250px-B%C3%A1nh_x%C3%A8o_with_n%C6%B0%E1%BB%9Bc_m%E1%BA%AFm.jpg",
+desc:"Bánh giòn rụm.",
+ingredients:["Bột gạo","Tôm","Thịt","Giá"],
+steps:["Pha bột","Đổ bánh","Thêm nhân","Gập bánh"]},
+
+hutieu:{title:"Hủ Tiếu",img:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/H%E1%BB%A7_t%C3%ADu_Nam_Vang_%28h%E1%BB%A7_t%C3%ADu_t%C3%B4m%29%2C_qu%C3%A1n_C%E1%BA%A7u_Tr%E1%BA%AFng%2C_K%C3%AAnh_n%C6%B0%E1%BB%9Bc_%C4%91en_%281%29.jpg/250px-H%E1%BB%A7_t%C3%ADu_Nam_Vang_%28h%E1%BB%A7_t%C3%ADu_t%C3%B4m%29%2C_qu%C3%A1n_C%E1%BA%A7u_Tr%E1%BA%AFng%2C_K%C3%AAnh_n%C6%B0%E1%BB%9Bc_%C4%91en_%281%29.jpg",
+desc:"Món nước miền Nam.",
+ingredients:["Hủ tiếu","Xương heo","Thịt bằm"],
+steps:["Ninh nước dùng","Trụng hủ tiếu","Chan nước"]},
+
+buncha:{title:"Bún Chả",img:"https://cdn.tgdd.vn/Files/2019/10/17/1209758/cach-lam-banh-cha-ha-noi-mon-dac-san-dan-da-cuc-hop-an-trung-thu-760x367.jpg",
+desc:"Món nổi tiếng Hà Nội.",
+ingredients:["Thịt heo","Bún","Nước mắm"],
+steps:["Nướng thịt","Pha nước chấm","Ăn kèm bún"]},
+
+che:{title:"Chè Ba Màu",img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7Vd0L-4uYds118OuLzug5cr3NG4rwZDhYcA&s",
+desc:"Món tráng miệng ngọt mát.",
+ingredients:["Đậu đỏ","Đậu xanh","Thạch","Nước cốt dừa"],
+steps:["Nấu đậu","Chuẩn bị thạch","Cho đá và nước cốt dừa"]}
+};
+
+function openDetail(key){
+document.querySelector("header").style.display="none"; 
+document.querySelector(".banner").style.display="none";
+document.querySelector(".popular").style.display="none";
+document.querySelector(".food-section").style.display="none";
+document.getElementById("detailPage").style.display="block";
+
+let data=foodData[key];
+document.getElementById("detailTitle").innerText=data.title;
+document.getElementById("detailImg").src=data.img;
+document.getElementById("detailDesc").innerText=data.desc;
+document.getElementById("detailIngredients").innerHTML=data.ingredients.map(i=>"<li>"+i+"</li>").join("");
+document.getElementById("detailSteps").innerHTML=data.steps.map(s=>"<li>"+s+"</li>").join("");
+}
+
+function goHome(){
+document.querySelector("header").style.display="block"; 
+document.querySelector(".banner").style.display="flex";
+document.querySelector(".popular").style.display="block";
+document.querySelector(".food-section").style.display="flex";
+document.getElementById("detailPage").style.display="none";
+window.scrollTo({top:0,behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
