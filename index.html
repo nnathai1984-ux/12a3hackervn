@@ -1,4 +1,32 @@
-;max-width:650px;padding:20px;
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Món Ngon Mỗi Ngày</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#f5f5f5;}
+
+header{
+background:#e60012;color:white;padding:15px;
+text-align:center;font-size:22px;font-weight:bold;
+}
+
+.home-btn{
+margin-top:10px;padding:8px 15px;border:none;
+background:white;color:#e60012;border-radius:20px;
+cursor:pointer;font-weight:bold;
+}
+
+.banner{
+background:url("https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=1400&q=60") center/cover;
+height:320px;display:flex;align-items:flex-end;justify-content:center;padding:20px;
+}
+
+.search-box{
+background:white;width:90%;max-width:650px;padding:20px;
 border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,0.2);text-align:center;
 }
 
@@ -166,9 +194,6 @@ let input=document.getElementById("searchInput").value.toLowerCase().trim();
 let cards=document.querySelectorAll(".food-card");
 let secretCard=document.querySelector(".secret-food");
 
-// Luôn ẩn secret trước
-secretCard.style.display="none";
-
 // Nếu nhập đúng mật khẩu
 if(input === "lê văn giàu"){
 cards.forEach(card=>{
@@ -182,10 +207,6 @@ return;
 
 // Lọc bình thường
 cards.forEach(card=>{
-if(card.classList.contains("secret-food")){
-card.style.display="none"; // luôn ẩn secret nếu không đúng mật khẩu
-return;
-}
 let title=card.querySelector("h3").innerText.toLowerCase();
 card.style.display=title.includes(input)?"block":"none";
 });
@@ -279,6 +300,12 @@ window.scrollTo({top:0,behavior:"smooth"});
 
 <footer>
 <p>© 2026 Món Ngon Mỗi Ngày. All Rights Reserved.</p>
+<p>Email hỗ trợ: <a href="mailto:nnathai1984@gmail.com">to7sieudinh12a3@gmail.com</a></p>
+<p>Tác giả: TỔ 7 </p>
+</footer>
+
+</body>
+</html> Ngày. All Rights Reserved.</p>
 <p>Email hỗ trợ: <a href="mailto:nnathai1984@gmail.com">to7sieudinh12a3@gmail.com</a></p>
 <p>Tác giả: TỔ 7 </p>
 </footer>
