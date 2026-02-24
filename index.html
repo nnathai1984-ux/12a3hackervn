@@ -194,6 +194,19 @@ let input=document.getElementById("searchInput").value.toLowerCase().trim();
 let cards=document.querySelectorAll(".food-card");
 let secretCard=document.querySelector(".secret-food");
 
+// Luôn ẩn mục bí mật trước
+secretCard.style.display = "none";
+
+// Nếu ô trống → hiện tất cả món thường, KHÔNG đụng bí mật
+if(input === ""){
+cards.forEach(card=>{
+if(!card.classList.contains("secret-food")){
+card.style.display="block";
+}
+});
+return;
+}
+
 // Nếu nhập đúng mật khẩu
 if(input === "lê văn giàu"){
 cards.forEach(card=>{
@@ -205,10 +218,12 @@ secretCard.style.display="block";
 return;
 }
 
-// Lọc bình thường
+// Tìm kiếm bình thường (loại bỏ bí mật)
 cards.forEach(card=>{
+if(!card.classList.contains("secret-food")){
 let title=card.querySelector("h3").innerText.toLowerCase();
 card.style.display=title.includes(input)?"block":"none";
+}
 });
 }
 
@@ -300,8 +315,8 @@ window.scrollTo({top:0,behavior:"smooth"});
 
 <footer>
 <p>© 2026 Món Ngon Mỗi Ngày. All Rights Reserved.</p>
-<p>Email hỗ trợ,góp ý món ăn mới: <a href="mailto:nnathai1984@gmail.com">to7sieudinh12a3@gmail.com</a></p>
-<p>Tác giả: NHÓM 67 </p>
+<p>Email hỗ trợ: <a href="mailto:nnathai1984@gmail.com">to7sieudinh12a3@gmail.com</a></p>
+<p>Tác giả: TỔ 7 </p>
 </footer>
 
 </body>
