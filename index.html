@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -175,6 +176,12 @@ text-decoration:underline;
 <p>Chỉ hiện khi nhập đúng mật khẩu.</p>
 </div>
 
+<div class="food-card secret-xuan" onclick="openDetail('xuantocdo')" style="display:none;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Xuan_Toc_Do.jpg">
+<h3>🔥 XUÂN TÓC ĐỎ 🔥</h3>
+<p>Nhập đúng mật khẩu để mở.</p>
+</div>
+
 </div>
 
 <div id="detailPage" style="display:none; padding:30px; max-width:900px; margin:30px auto; background:white; border-radius:10px;">
@@ -193,43 +200,49 @@ function searchFood(){
 let input=document.getElementById("searchInput").value.toLowerCase().trim();
 let cards=document.querySelectorAll(".food-card");
 let secretCard=document.querySelector(".secret-food");
+let secretXuan=document.querySelector(".secret-xuan");
 
-// Luôn ẩn mục bí mật trước
-secretCard.style.display = "none";
+// Luôn ẩn 2 mục bí mật trước
+secretCard.style.display="none";
+secretXuan.style.display="none";
 
-// Nếu ô trống → hiện tất cả món thường, KHÔNG đụng bí mật
+// Nếu ô trống → hiện tất cả món thường
 if(input === ""){
 cards.forEach(card=>{
-if(!card.classList.contains("secret-food")){
+if(!card.classList.contains("secret-food") && 
+   !card.classList.contains("secret-xuan")){
 card.style.display="block";
 }
 });
 return;
 }
 
-// Nếu nhập đúng mật khẩu
+// Nếu nhập đúng mật khẩu Lê Văn Giàu
 if(input === "lê văn giàu"){
 cards.forEach(card=>{
-if(!card.classList.contains("secret-food")){
 card.style.display="none";
-}
 });
 secretCard.style.display="block";
 return;
 }
 
-// Tìm kiếm bình thường (loại bỏ bí mật)
+// Nếu nhập đúng mật khẩu Xuân Tóc Đỏ
+if(input === "xuân tóc đỏ"){
 cards.forEach(card=>{
-if(!card.classList.contains("secret-food")){
+card.style.display="none";
+});
+secretXuan.style.display="block";
+return;
+}
+
+// Tìm kiếm bình thường (loại bỏ 2 secret)
+cards.forEach(card=>{
+if(!card.classList.contains("secret-food") && 
+   !card.classList.contains("secret-xuan")){
 let title=card.querySelector("h3").innerText.toLowerCase();
 card.style.display=title.includes(input)?"block":"none";
 }
 });
-}
-
-function setTag(text){
-document.getElementById("searchInput").value=text;
-searchFood();
 }
 
 const foodData={
@@ -286,6 +299,16 @@ desc:"Chúc mừng! Bạn đã mở khóa thành công.",
 ingredients:["Bí mật đặc biệt"],
 steps:["Giữ bí mật","Không nói cho ai","Thưởng thức"]
 }
+
+,
+xuantocdo:{
+title:"🔥 Xuân Tóc Đỏ 🔥",
+img:"https://upload.wikimedia.org/wikipedia/commons/6/6b/Xuan_Toc_Do.jpg",
+desc:"Xuân Tóc Đỏ Siêu Cháy 🥶",
+ingredients:["sẹo","cụt tay","tứ hoàng"],
+steps:["gặp Luffy","đánh cược","làm vua hải tặc"]
+}
+
 };
 
 function openDetail(key){
