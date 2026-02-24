@@ -190,9 +190,13 @@ text-decoration:underline;
 
 <script>
 function searchFood(){
+function searchFood(){
 let input=document.getElementById("searchInput").value.toLowerCase().trim();
 let cards=document.querySelectorAll(".food-card");
 let secretCard=document.querySelector(".secret-food");
+
+// Luôn ẩn secret trước
+secretCard.style.display="none";
 
 // Nếu nhập đúng mật khẩu
 if(input === "lê văn giàu"){
@@ -207,6 +211,10 @@ return;
 
 // Lọc bình thường
 cards.forEach(card=>{
+if(card.classList.contains("secret-food")){
+card.style.display="none"; // luôn ẩn secret nếu không đúng mật khẩu
+return;
+}
 let title=card.querySelector("h3").innerText.toLowerCase();
 card.style.display=title.includes(input)?"block":"none";
 });
