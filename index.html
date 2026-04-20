@@ -116,6 +116,102 @@ text-decoration:underline;
 
 <div class="food-section">
 
+<div class="food-card" onclick="openDetail('bunthitnuong')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Bun_thit_nuong.jpg">
+<h3>Bún Thịt Nướng</h3>
+<p>Món bún trộn đậm đà.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('comga')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Com_ga.jpg">
+<h3>Cơm Gà</h3>
+<p>Thơm ngon, dễ ăn.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('banhkhothit')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Banh_khot.jpg">
+<h3>Bánh Khọt</h3>
+<p>Giòn rụm hấp dẫn.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('huongnuong')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Pork_skewers.jpg">
+<h3>Thịt Xiên Nướng</h3>
+<p>Món ăn vặt thơm lừng.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('suonxao')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Suon_xao.jpg">
+<h3>Sườn Xào Chua Ngọt</h3>
+<p>Đậm vị, bắt cơm.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('trunglongdao')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Soft_boiled_egg.jpg">
+<h3>Trứng Lòng Đào</h3>
+<p>Béo ngậy hấp dẫn.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('canuong')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Grilled_fish.jpg">
+<h3>Cá Nướng</h3>
+<p>Thơm ngon dân dã.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('canhrau')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Vegetable_soup.jpg">
+<h3>Canh Rau</h3>
+<p>Thanh mát, nhẹ nhàng.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('dauxotca')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Tofu_tomato.jpg">
+<h3>Đậu Sốt Cà</h3>
+<p>Món chay đơn giản.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('thitluoc')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Boiled_pork.jpg">
+<h3>Thịt Luộc</h3>
+<p>Món ăn truyền thống.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('goiga')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Chicken_salad.jpg">
+<h3>Gỏi Gà</h3>
+<p>Chua ngọt hấp dẫn.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('mihoanhthanh')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Wonton_noodle.jpg">
+<h3>Mì Hoành Thánh</h3>
+<p>Món nước thơm ngon.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('banhda')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Banh_da_cua.jpg">
+<h3>Bánh Đa Cua</h3>
+<p>Đặc sản Hải Phòng.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('laucuathapcam')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Hotpot.jpg">
+<h3>Lẩu Thập Cẩm</h3>
+<p>Đầy đủ topping.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('chethai')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Che_thai.jpg">
+<h3>Chè Thái</h3>
+<p>Ngọt mát hấp dẫn.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('banhrandau')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Fried_dough_ball.jpg">
+<h3>Bánh Rán</h3>
+<p>Ngọt giòn thơm ngon.</p>
+</div>
+
 <div class="food-card" onclick="openDetail('botchien')">
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Bot_chien.jpg">
 <h3>Bột Chiên</h3>
@@ -460,6 +556,134 @@ card.style.display=title.includes(input)?"block":"none";
 }
 
 const foodData={
+
+bunthitnuong:{
+title:"Bún Thịt Nướng",
+img:"https://upload.wikimedia.org/wikipedia/commons/2/2f/Bun_thit_nuong.jpg",
+desc:"Bún trộn thịt nướng thơm ngon.",
+ingredients:["Bún","Thịt nướng","Rau sống"],
+steps:["Nướng thịt","Chuẩn bị bún","Trộn đều"]
+},
+
+comga:{
+title:"Cơm Gà",
+img:"https://upload.wikimedia.org/wikipedia/commons/0/0d/Com_ga.jpg",
+desc:"Cơm gà đơn giản.",
+ingredients:["Gà","Cơm"],
+steps:["Luộc gà","Nấu cơm","Trình bày"]
+},
+
+banhkhothit:{
+title:"Bánh Khọt",
+img:"https://upload.wikimedia.org/wikipedia/commons/4/4f/Banh_khot.jpg",
+desc:"Bánh giòn rụm.",
+ingredients:["Bột","Tôm"],
+steps:["Đổ bánh","Chiên"]
+},
+
+huongnuong:{
+title:"Thịt Xiên Nướng",
+img:"https://upload.wikimedia.org/wikipedia/commons/7/73/Pork_skewers.jpg",
+desc:"Thịt nướng xiên thơm.",
+ingredients:["Thịt","Gia vị"],
+steps:["Ướp","Nướng"]
+},
+
+suonxao:{
+title:"Sườn Xào Chua Ngọt",
+img:"https://upload.wikimedia.org/wikipedia/commons/5/57/Suon_xao.jpg",
+desc:"Chua ngọt hấp dẫn.",
+ingredients:["Sườn","Cà chua"],
+steps:["Chiên","Xào"]
+},
+
+trunglongdao:{
+title:"Trứng Lòng Đào",
+img:"https://upload.wikimedia.org/wikipedia/commons/1/15/Soft_boiled_egg.jpg",
+desc:"Trứng béo.",
+ingredients:["Trứng"],
+steps:["Luộc"]
+},
+
+canuong:{
+title:"Cá Nướng",
+img:"https://upload.wikimedia.org/wikipedia/commons/9/9f/Grilled_fish.jpg",
+desc:"Cá nướng thơm.",
+ingredients:["Cá","Gia vị"],
+steps:["Ướp","Nướng"]
+},
+
+canhrau:{
+title:"Canh Rau",
+img:"https://upload.wikimedia.org/wikipedia/commons/8/8c/Vegetable_soup.jpg",
+desc:"Canh nhẹ.",
+ingredients:["Rau"],
+steps:["Nấu"]
+},
+
+dauxotca:{
+title:"Đậu Sốt Cà",
+img:"https://upload.wikimedia.org/wikipedia/commons/6/6e/Tofu_tomato.jpg",
+desc:"Đậu mềm.",
+ingredients:["Đậu","Cà"],
+steps:["Chiên","Sốt"]
+},
+
+thitluoc:{
+title:"Thịt Luộc",
+img:"https://upload.wikimedia.org/wikipedia/commons/3/38/Boiled_pork.jpg",
+desc:"Món truyền thống.",
+ingredients:["Thịt"],
+steps:["Luộc"]
+},
+
+goiga:{
+title:"Gỏi Gà",
+img:"https://upload.wikimedia.org/wikipedia/commons/0/02/Chicken_salad.jpg",
+desc:"Gỏi ngon.",
+ingredients:["Gà","Rau"],
+steps:["Trộn"]
+},
+
+mihoanhthanh:{
+title:"Mì Hoành Thánh",
+img:"https://upload.wikimedia.org/wikipedia/commons/3/3e/Wonton_noodle.jpg",
+desc:"Mì nước ngon.",
+ingredients:["Mì","Hoành thánh"],
+steps:["Nấu"]
+},
+
+banhda:{
+title:"Bánh Đa Cua",
+img:"https://upload.wikimedia.org/wikipedia/commons/6/6e/Banh_da_cua.jpg",
+desc:"Đặc sản Hải Phòng.",
+ingredients:["Bánh đa","Cua"],
+steps:["Nấu"]
+},
+
+laucuathapcam:{
+title:"Lẩu Thập Cẩm",
+img:"https://upload.wikimedia.org/wikipedia/commons/5/5f/Hotpot.jpg",
+desc:"Lẩu nhiều topping.",
+ingredients:["Thịt","Rau"],
+steps:["Nấu"]
+},
+
+chethai:{
+title:"Chè Thái",
+img:"https://upload.wikimedia.org/wikipedia/commons/2/2a/Che_thai.jpg",
+desc:"Ngọt mát.",
+ingredients:["Trái cây","Sữa"],
+steps:["Trộn"]
+},
+
+banhrandau:{
+title:"Bánh Rán",
+img:"https://upload.wikimedia.org/wikipedia/commons/1/1a/Fried_dough_ball.jpg",
+desc:"Ngọt giòn.",
+ingredients:["Bột","Đường"],
+steps:["Chiên"]
+},
 
 botchien:{
 title:"Bột Chiên",
