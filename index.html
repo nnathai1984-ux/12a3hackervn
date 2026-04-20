@@ -196,6 +196,10 @@ text-decoration:underline;
 </div>
 
 <script>
+function setTag(tag){
+    document.getElementById("searchInput").value = tag;
+    searchFood();
+}
 function searchFood(){
 let input=document.getElementById("searchInput").value.toLowerCase().trim();
 let cards=document.querySelectorAll(".food-card");
@@ -344,3 +348,4 @@ window.scrollTo({top:0,behavior:"smooth"});
 
 </body>
 </html>
+
