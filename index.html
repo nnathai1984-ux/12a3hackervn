@@ -116,6 +116,96 @@ text-decoration:underline;
 
 <div class="food-section">
 
+<div class="food-card" onclick="openDetail('banhbeo')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Banh_beo.jpg">
+<h3>Bánh Bèo</h3>
+<p>Món Huế mềm mịn, đậm đà.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('banhcanh')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Banh_canh.jpg">
+<h3>Bánh Canh</h3>
+<p>Sợi bánh dai, nước dùng đậm vị.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('bunmoc')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/Bun_moc.jpg">
+<h3>Bún Mọc</h3>
+<p>Nước dùng thanh nhẹ, dễ ăn.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('xoi')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Xoi_man.jpg">
+<h3>Xôi Mặn</h3>
+<p>Món ăn sáng quen thuộc.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('lau')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Lau_thai.jpg">
+<h3>Lẩu Thái</h3>
+<p>Lẩu chua cay hấp dẫn.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('goivit')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Goivit.jpg">
+<h3>Gỏi Vịt</h3>
+<p>Gỏi trộn chua ngọt hấp dẫn.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('canhchua')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Canh_chua.jpg">
+<h3>Canh Chua</h3>
+<p>Canh cá chua ngọt miền Nam.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('thitkho')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Thit_kho_tau.jpg">
+<h3>Thịt Kho Tàu</h3>
+<p>Món kho truyền thống.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('cakho')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Ca_kho.jpg">
+<h3>Cá Kho</h3>
+<p>Cá kho đậm đà, hao cơm.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('trungchien')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Fried_egg.jpg">
+<h3>Trứng Chiên</h3>
+<p>Món đơn giản, nhanh gọn.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('bunrieu')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Bun_rieu.jpg">
+<h3>Bún Riêu</h3>
+<p>Bún riêu cua dân dã, đậm vị.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('comchien')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Com_chien_duong_chau.jpg">
+<h3>Cơm Chiên</h3>
+<p>Món cơm chiên thơm ngon, dễ ăn.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('miquang')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Mi_quang.jpg">
+<h3>Mì Quảng</h3>
+<p>Đặc sản miền Trung nổi tiếng.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('banhcuon')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Banh_cuon.jpg">
+<h3>Bánh Cuốn</h3>
+<p>Món ăn sáng nhẹ nhàng.</p>
+</div>
+
+<div class="food-card" onclick="openDetail('nemran')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Nem_ran.jpg">
+<h3>Nem Rán</h3>
+<p>Giòn rụm, ăn cực cuốn.</p>
+</div>
+
 <div class="food-card" onclick="openDetail('pho')">
 <img src="https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=800&q=60">
 <h3>Phở Bò</h3>
@@ -250,6 +340,190 @@ card.style.display=title.includes(input)?"block":"none";
 }
 
 const foodData={
+
+banhbeo:{
+title:"Bánh Bèo",
+img:"https://upload.wikimedia.org/wikipedia/commons/2/2c/Banh_beo.jpg",
+desc:"Bánh bèo Huế mềm mịn, ăn kèm tôm cháy.",
+ingredients:["Bột gạo","Tôm","Hành phi","Nước mắm"],
+steps:["Pha bột","Hấp bánh","Làm tôm cháy","Rưới nước mắm"]
+},
+
+banhcanh:{
+title:"Bánh Canh",
+img:"https://upload.wikimedia.org/wikipedia/commons/5/5b/Banh_canh.jpg",
+desc:"Bánh canh sợi dai, nước dùng đậm.",
+ingredients:["Bánh canh","Xương heo","Chả cá"],
+steps:["Ninh nước dùng","Luộc bánh","Cho topping","Chan nước"]
+},
+
+bunmoc:{
+title:"Bún Mọc",
+img:"https://upload.wikimedia.org/wikipedia/commons/0/0e/Bun_moc.jpg",
+desc:"Món bún nhẹ, thanh đạm.",
+ingredients:["Bún","Giò sống","Nấm"],
+steps:["Nấu nước dùng","Vo mọc","Trụng bún","Chan nước"]
+},
+
+xoi:{
+title:"Xôi Mặn",
+img:"https://upload.wikimedia.org/wikipedia/commons/6/6b/Xoi_man.jpg",
+desc:"Xôi dẻo thơm, ăn sáng tiện.",
+ingredients:["Nếp","Lạp xưởng","Trứng","Hành phi"],
+steps:["Nấu xôi","Chiên topping","Trộn đều","Thưởng thức"]
+},
+
+lau:{
+title:"Lẩu Thái",
+img:"https://upload.wikimedia.org/wikipedia/commons/7/7b/Lau_thai.jpg",
+desc:"Lẩu chua cay đậm vị Thái.",
+ingredients:["Hải sản","Nấm","Rau","Gia vị lẩu"],
+steps:["Nấu nước lẩu","Thêm gia vị","Nhúng đồ ăn","Thưởng thức"]
+},
+
+goivit:{
+title:"Gỏi Vịt",
+img:"https://upload.wikimedia.org/wikipedia/commons/4/4b/Goivit.jpg",
+desc:"Gỏi vịt chua ngọt hấp dẫn.",
+ingredients:["Thịt vịt","Bắp cải","Rau răm"],
+steps:["Luộc vịt","Xé thịt","Trộn gỏi","Nêm gia vị"]
+},
+
+canhchua:{
+title:"Canh Chua",
+img:"https://upload.wikimedia.org/wikipedia/commons/3/3c/Canh_chua.jpg",
+desc:"Canh cá chua ngọt miền Nam.",
+ingredients:["Cá","Me","Cà chua","Bạc hà"],
+steps:["Nấu nước me","Cho cá","Thêm rau","Nêm gia vị"]
+},
+
+thitkho:{
+title:"Thịt Kho Tàu",
+img:"https://upload.wikimedia.org/wikipedia/commons/8/8b/Thit_kho_tau.jpg",
+desc:"Thịt kho mềm, béo, đậm đà.",
+ingredients:["Thịt ba chỉ","Trứng","Nước dừa"],
+steps:["Ướp thịt","Kho thịt","Thêm trứng","Nấu mềm"]
+},
+
+cakho:{
+title:"Cá Kho",
+img:"https://upload.wikimedia.org/wikipedia/commons/0/0c/Ca_kho.jpg",
+desc:"Cá kho đậm vị truyền thống.",
+ingredients:["Cá","Nước mắm","Tiêu"],
+steps:["Ướp cá","Kho nhỏ lửa","Nêm lại","Hoàn thành"]
+},
+
+trungchien:{
+title:"Trứng Chiên",
+img:"https://upload.wikimedia.org/wikipedia/commons/2/2f/Fried_egg.jpg",
+desc:"Món đơn giản, nhanh gọn.",
+ingredients:["Trứng","Hành","Gia vị"],
+steps:["Đánh trứng","Chiên","Nêm","Thưởng thức"]
+},
+
+bunrieu:{
+title:"Bún Riêu",
+img:"https://upload.wikimedia.org/wikipedia/commons/6/6b/Bun_rieu.jpg",
+desc:"Bún riêu cua là món ăn dân dã, nước dùng chua thanh, đậm vị cua đồng.",
+ingredients:[
+"Cua đồng xay",
+"Cà chua",
+"Đậu hũ chiên",
+"Bún tươi",
+"Hành lá, rau sống",
+"Mắm tôm, gia vị"
+],
+steps:[
+"Lọc cua lấy nước, bỏ xác",
+"Đun nước cua cho nổi riêu",
+"Phi hành, xào cà chua tạo màu",
+"Cho vào nồi nước dùng, nêm gia vị",
+"Thêm đậu hũ, chan lên bún và ăn kèm rau"
+]
+},
+
+comchien:{
+title:"Cơm Chiên",
+img:"https://upload.wikimedia.org/wikipedia/commons/5/58/Com_chien_duong_chau.jpg",
+desc:"Cơm chiên vàng giòn, thơm ngon, tận dụng cơm nguội rất tiện.",
+ingredients:[
+"Cơm nguội",
+"Trứng gà",
+"Xúc xích hoặc tôm",
+"Hành lá",
+"Nước mắm, tiêu"
+],
+steps:[
+"Đánh tan trứng, chiên sơ",
+"Phi hành cho thơm",
+"Cho cơm vào đảo đều",
+"Thêm trứng, xúc xích/tôm",
+"Nêm gia vị vừa ăn, đảo săn lại"
+]
+},
+
+miquang:{
+title:"Mì Quảng",
+img:"https://upload.wikimedia.org/wikipedia/commons/0/0b/Mi_quang.jpg",
+desc:"Mì Quảng là đặc sản Quảng Nam với nước dùng ít nhưng đậm đà.",
+ingredients:[
+"Mì Quảng",
+"Tôm, thịt gà hoặc thịt heo",
+"Đậu phộng rang",
+"Bánh tráng nướng",
+"Rau sống",
+"Nước dùng"
+],
+steps:[
+"Nấu nước dùng từ xương",
+"Xào tôm thịt với gia vị",
+"Cho mì vào tô",
+"Thêm nhân và chan ít nước dùng",
+"Rắc đậu phộng, ăn kèm bánh tráng"
+]
+},
+
+banhcuon:{
+title:"Bánh Cuốn",
+img:"https://upload.wikimedia.org/wikipedia/commons/0/0f/Banh_cuon.jpg",
+desc:"Bánh cuốn mềm mịn, nhân thịt thơm ngon, ăn kèm nước mắm.",
+ingredients:[
+"Bột gạo",
+"Thịt băm",
+"Mộc nhĩ",
+"Hành phi",
+"Nước mắm pha"
+],
+steps:[
+"Pha bột gạo với nước",
+"Tráng lớp bánh mỏng trên nồi hấp",
+"Xào nhân thịt với mộc nhĩ",
+"Cuốn bánh với nhân",
+"Rắc hành phi và ăn kèm nước mắm"
+]
+},
+
+nemran:{
+title:"Nem Rán",
+img:"https://upload.wikimedia.org/wikipedia/commons/3/3c/Nem_ran.jpg",
+desc:"Nem rán giòn tan, là món ăn truyền thống không thể thiếu.",
+ingredients:[
+"Bánh đa nem",
+"Thịt băm",
+"Miến",
+"Mộc nhĩ",
+"Cà rốt",
+"Gia vị"
+],
+steps:[
+"Trộn nhân gồm thịt, miến, rau",
+"Cuốn nem bằng bánh đa",
+"Đun dầu nóng, chiên vàng đều",
+"Vớt ra để ráo dầu",
+"Ăn kèm rau sống và nước mắm"
+]
+},
+
 pho:{title:"Phở Bò",img:"https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?auto=format&fit=crop&w=1200&q=60",
 desc:"Phở bò là món ăn truyền thống nổi tiếng của Việt Nam.",
 ingredients:["Xương bò","Thịt bò","Bánh phở","Quế hồi","Hành gừng"],
